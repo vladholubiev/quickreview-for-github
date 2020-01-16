@@ -1,17 +1,18 @@
 {
-  "name": "@shelf/aws-ddb-with-xray",
+  "name": "@shelf/xxxxxx",
   "version": "0.0.0",
-  "description": "AWS DynamoDB Document Client initialized with X-Ray",
+  "description": "xxxxxx",
   "license": "MIT",
-  "repository": "shelfio/aws-ddb-with-xray",
   "author": {
     "name": "Vlad Holubiev",
     "email": "vlad@shelf.io",
-    "url": "shelf.io"
+    "url": "https://shelf.io"
   },
-  "engines": {
-    "node": ">=10"
-  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "rm -rf lib/ && yarn build:types && yarn build:code",
     "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' && find ./lib -name '*.test.d.ts' -delete",
@@ -24,15 +25,24 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch"
   },
-  "main": "lib",
-  "files": [
-    "lib"
-  ],
-  "types": "lib/index.d.ts",
-  "keywords": [
-    "pspdfkit",
-    "ssr"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{html,json,md,yml}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "7.8.0",
@@ -41,33 +51,17 @@
     "@babel/preset-typescript": "7.8.0",
     "@shelf/eslint-config": "0.13.0",
     "@types/jest": "24.0.25",
-    "@types/node": "10",
+    "@types/node": "12",
     "babel-jest": "24.9.0",
     "eslint": "6.8.0",
-    "husky": "4.0.7",
+    "husky": "4.0.10",
     "jest": "24.9.0",
     "lint-staged": "9.5.0",
     "prettier": "1.19.1",
     "typescript": "3.7.4"
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "git update-index --again"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,js}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{html,json,md,yml}": [
-      "prettier --write",
-      "git add"
-    ]
+  "engines": {
+    "node": ">=12"
   },
   "publishConfig": {
     "access": "public"
