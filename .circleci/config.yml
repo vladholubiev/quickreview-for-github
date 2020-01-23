@@ -8,7 +8,7 @@ commands:
     steps:
       - node/with-cache:
           cache-version: v1-all
-          cache-key: yarn.lock
+          cache-key: package.json
           dir: ~/repo/node_modules
           use-strict-cache: true
           steps:
