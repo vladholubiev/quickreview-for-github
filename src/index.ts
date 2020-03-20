@@ -1,3 +1,5 @@
-export function getFoo(): string {
-  return 'bar';
+function init() {
+  console.log('hello');
 }
+
+init();

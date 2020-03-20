@@ -16,6 +16,7 @@
   "scripts": {
     "build": "rm -rf lib/ && yarn build:code",
     "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' --copy-files && find ./lib -name '*.test.ts' -delete",
+    "build:webpack": "NODE_ENV=production webpack",
     "coverage": "jest --coverage",
     "lint": "eslint . --ext .js,.ts,.json --fix",
     "lint:ci": "eslint . --ext .js,.ts,.json",
@@ -42,22 +43,31 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "dependencies": {},
+  "dependencies": {
+    "delegate-it": "1.1.0"
+  },
   "devDependencies": {
     "@babel/cli": "7.8.4",
     "@babel/core": "7.9.0",
     "@babel/preset-env": "7.9.0",
     "@babel/preset-typescript": "7.9.0",
     "@shelf/eslint-config": "0.14.2",
+    "@types/chrome": "0.0.101",
     "@types/jest": "25.1.4",
     "@types/node": "12",
     "babel-jest": "25.1.0",
+    "babel-loader": "8.1.0",
+    "copy-webpack-plugin": "5.1.1",
     "eslint": "6.8.0",
     "husky": "4.2.3",
     "jest": "25.1.0",
     "lint-staged": "10.0.8",
     "prettier": "1.19.1",
-    "typescript": "3.8.3"
+    "typescript": "3.8.3",
+    "webpack": "4.42.0",
+    "webpack-bundle-analyzer": "3.6.1",
+    "webpack-cli": "3.3.11",
+    "webpack-node-externals": "1.7.2"
   },
   "engines": {
     "node": ">=12"
