@@ -1,0 +1,13 @@
+{
+  "name": "GitHub Productivity",
+  "version": "0.0.0",
+  "manifest_version": 2,
+  "permissions": ["activeTab", "https://github.com/*", "https://api.github.com/*"],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["https://github.com/*", "https://gist.github.com/*"],
+      "js": ["index.js"]
+    }
+  ]
+}
