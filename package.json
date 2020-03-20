@@ -14,9 +14,8 @@
   "main": "lib",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rm -rf lib/ && yarn build:types && yarn build:code",
-    "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' && find ./lib -name '*.test.d.ts' -delete",
-    "build:types": "tsc --emitDeclarationOnly --declaration --isolatedModules false --declarationDir lib",
+    "build": "rm -rf lib/ && yarn build:code",
+    "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' --copy-files && find ./lib -name '*.test.ts' -delete",
     "coverage": "jest --coverage",
     "lint": "eslint . --ext .js,.ts,.json --fix",
     "lint:ci": "eslint . --ext .js,.ts,.json",
