@@ -15,6 +15,12 @@
       "background.js"
     ]
   },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png",
+    "256": "icons/256.png"
+  },
   "options_ui": {
     "chrome_style": true,
     "page": "options.html"
