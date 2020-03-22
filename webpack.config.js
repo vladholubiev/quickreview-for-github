@@ -3,9 +3,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.ts',
+  entry: {
+    'content-script': './src/index.ts',
+    'hot-reload': './src/hot-reload.ts'
+  },
   output: {
-    filename: 'index.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'lib')
   },
   optimization: {
@@ -24,13 +27,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: 'src/manifest.json'
-      }
-    ])
-  ],
+  plugins: [new CopyWebpackPlugin([{from: 'src/manifest.json'}])],
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
     extensions: ['.ts', '.tsx', '.json']

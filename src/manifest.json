@@ -8,7 +8,7 @@
     {
       "run_at": "document_start",
       "matches": ["https://github.com/*", "https://gist.github.com/*"],
-      "js": ["index.js"]
+      "js": ["content-script.js"]
     }
   ]
 }
