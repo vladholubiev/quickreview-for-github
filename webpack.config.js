@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    'content-script': './src/index.ts',
+    'content-script': './src/index.tsx',
     'hot-reload': './src/hot-reload.ts'
   },
   output: {
@@ -30,6 +30,6 @@ module.exports = {
   plugins: [new CopyWebpackPlugin([{from: 'src/manifest.json'}])],
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
-    extensions: ['.ts', '.tsx', '.json']
+    extensions: ['.ts', '.tsx', '.json', '.js']
   }
 };
