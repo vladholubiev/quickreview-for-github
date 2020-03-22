@@ -1,8 +1,20 @@
-import delegate from 'delegate-it/index.js';
+import delegate from 'delegate-it';
+import React from 'dom-chef';
+import domLoaded from 'dom-loaded';
 
 let currentViewFileCheckbox: HTMLDivElement = null;
 
-function init() {
+async function init() {
+  await domLoaded;
+
+  console.log(React);
+
+  document.querySelector('.filter-list.js-notification-sidebar-filters').prepend(
+    <li>
+      <a class="filter-item">🤖 PRs from Bots</a>
+    </li>
+  );
+
   delegate<HTMLElement, KeyboardEvent>('html', 'keypress', event => {
     if (!isVKeyPressedInBody(event)) {
       return;

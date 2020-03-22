@@ -43,10 +43,13 @@
   },
   "dependencies": {
     "crx-hotreload": "1.0.4",
-    "delegate-it": "1.1.0"
+    "delegate-it": "1.1.0",
+    "dom-chef": "3.6.3",
+    "dom-loaded": "2.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
+    "@babel/plugin-transform-react-jsx": "7.9.1",
     "@babel/preset-env": "7.9.0",
     "@babel/preset-typescript": "7.9.0",
     "@shelf/eslint-config": "0.14.2",
