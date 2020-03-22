@@ -1,26 +1,33 @@
 import delegate from 'delegate-it';
 import select from 'select-dom';
 import React from 'dom-chef';
-import {approvePR} from '../../gh-api';
+import {approvePR, mergePR} from '../../gh-api';
 
-export async function enableApprovingPROnAPress(): Promise<void> {
+export async function enableApproveMergeShortcuts(): Promise<void> {
   const [org, repo, _, prNumber] = window.location.href.split('/').slice(3);
 
   delegate<HTMLElement, KeyboardEvent>('html', 'keypress', async (event) => {
-    if (!isAKeyPressedInBody(event)) {
-      return;
+    if (isAKeyPressedInBody(event)) {
+      const wantApprove = confirm('Approve this PR?');
+
+      if (wantApprove) {
+        await approvePR({org, repo, prNumber});
+        insertNotificationBanner('Your review was submitted successfully.');
+      }
     }
 
-    const wantApprove = confirm('Approve this PR?');
+    if (isMKeyPressedInBody(event)) {
+      const wantMerge = confirm('Merge this PR?');
 
-    if (wantApprove) {
-      await approvePR({org, repo, prNumber});
-      insertNotificationBanner();
+      if (wantMerge) {
+        await mergePR({org, repo, prNumber});
+        insertNotificationBanner('Successfully merged PR');
+      }
     }
   });
 }
 
-function insertNotificationBanner() {
+function insertNotificationBanner(text: string): void {
   select('#js-flash-container').append(
     <div class="flash flash-full flash-notice">
       <div class="container-lg px-2">
@@ -39,7 +46,7 @@ function insertNotificationBanner() {
             ></path>
           </svg>
         </button>
-        Your review was submitted successfully.
+        {text}
       </div>
     </div>
   );
@@ -52,4 +59,13 @@ function isAKeyPressedInBody(event: KeyboardEvent): boolean {
   console.debug({isKeypressInBody, isKeypressA});
 
   return isKeypressA && isKeypressInBody;
+}
+
+function isMKeyPressedInBody(event: KeyboardEvent): boolean {
+  const isKeypressInBody = event.target['tagName'] === 'BODY';
+  const isKeypressM = event.code === 'KeyM';
+
+  console.debug({isKeypressInBody, isKeypressM});
+
+  return isKeypressM && isKeypressInBody;
 }
