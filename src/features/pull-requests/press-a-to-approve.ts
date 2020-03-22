@@ -2,7 +2,7 @@ import delegate from 'delegate-it';
 import select from 'select-dom';
 
 export function enableApprovingPROnAPress(): void {
-  delegate<HTMLElement, KeyboardEvent>('html', 'keypress', event => {
+  delegate<HTMLElement, KeyboardEvent>('html', 'keypress', (event) => {
     if (!isAKeyPressedInBody(event)) {
       return;
     }

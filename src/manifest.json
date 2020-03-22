@@ -2,13 +2,26 @@
   "name": "GitHub Productivity",
   "version": "0.0.0",
   "manifest_version": 2,
-  "permissions": ["activeTab", "https://github.com/*", "https://api.github.com/*"],
-  "background": {"scripts": ["hot-reload.js"]},
+  "permissions": [
+    "activeTab",
+    "https://github.com/*",
+    "https://api.github.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "hot-reload.js"
+    ]
+  },
   "content_scripts": [
     {
       "run_at": "document_start",
-      "matches": ["https://github.com/*", "https://gist.github.com/*"],
-      "js": ["content-script.js"]
+      "matches": [
+        "https://github.com/*",
+        "https://gist.github.com/*"
+      ],
+      "js": [
+        "content-script.js"
+      ]
     }
   ]
 }

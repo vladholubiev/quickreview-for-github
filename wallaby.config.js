@@ -5,8 +5,8 @@ module.exports = () => {
     tests: ['src/**/*.test.ts'],
     env: {
       params: {
-        env: 'TZ=UTC'
-      }
-    }
+        env: 'TZ=UTC',
+      },
+    },
   };
 };

@@ -5,10 +5,10 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
-          browsers: ['last 4 chrome versions']
-        }
-      }
-    ]
+          browsers: ['last 4 chrome versions'],
+        },
+      },
+    ],
   ],
-  plugins: [['@babel/plugin-transform-react-jsx']]
+  plugins: [['@babel/plugin-transform-react-jsx']],
 };

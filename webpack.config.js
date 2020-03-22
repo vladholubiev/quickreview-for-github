@@ -5,14 +5,14 @@ module.exports = {
   mode: 'production',
   entry: {
     'content-script': './src/index.tsx',
-    'hot-reload': './src/hot-reload.ts'
+    'hot-reload': './src/hot-reload.ts',
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'lib')
+    path: path.resolve(__dirname, 'lib'),
   },
   optimization: {
-    minimize: false
+    minimize: false,
   },
   module: {
     rules: [
@@ -21,15 +21,15 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            cacheDirectory: true
-          }
-        }
-      }
-    ]
+            cacheDirectory: true,
+          },
+        },
+      },
+    ],
   },
   plugins: [new CopyWebpackPlugin([{from: 'src/manifest.json'}])],
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
-    extensions: ['.ts', '.tsx', '.json', '.js']
-  }
+    extensions: ['.ts', '.tsx', '.json', '.js'],
+  },
 };

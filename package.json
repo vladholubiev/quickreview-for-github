@@ -8,11 +8,11 @@
     "email": "vlad@shelf.io",
     "url": "https://shelf.io"
   },
+  "main": "lib",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
-  "main": "lib",
-  "types": "lib/index.d.ts",
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "coverage": "jest --coverage",
@@ -29,11 +29,11 @@
     }
   },
   "lint-staged": {
-    "*.{html,json,md,yml}": [
+    "*.{html,md,yml}": [
       "prettier --write",
       "git add"
     ],
-    "*.{js,ts}": [
+    "*.{js,json,ts,tsx}": [
       "eslint --fix",
       "git add"
     ]
@@ -64,7 +64,7 @@
     "husky": "4.2.3",
     "jest": "25.1.0",
     "lint-staged": "10.0.8",
-    "prettier": "1.19.1",
+    "prettier": "2.0.1",
     "typescript": "3.8.3",
     "webpack": "4.42.0",
     "webpack-bundle-analyzer": "3.6.1",
