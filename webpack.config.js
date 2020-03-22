@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     'content-script': './src/index.tsx',
     options: './src/options.ts',
+    background: './src/background.ts',
     'hot-reload': './src/hot-reload.ts',
   },
   output: {
