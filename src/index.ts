@@ -1,5 +1,9 @@
+import delegate from 'delegate-it/index.js';
+
 function init() {
-  console.log('hello');
+  delegate<HTMLTextAreaElement, KeyboardEvent>('html', 'keypress', event => {
+    console.info(event);
+  });
 }
 
 init();

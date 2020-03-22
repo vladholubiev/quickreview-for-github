@@ -32,6 +32,7 @@ module.exports = {
     ])
   ],
   resolve: {
+    modules: [path.resolve(__dirname, 'node_modules')],
     extensions: ['.ts', '.tsx', '.json']
   }
 };
