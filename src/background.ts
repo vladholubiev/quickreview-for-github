@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener((message, {tab}) => {
       chrome.tabs.create({
         url,
         index: tab!.index + i + 1,
-        active: false,
+        active: true,
       });
     }
   }
