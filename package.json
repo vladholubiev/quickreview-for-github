@@ -45,7 +45,8 @@
     "crx-hotreload": "1.0.4",
     "delegate-it": "1.1.0",
     "dom-chef": "3.6.3",
-    "dom-loaded": "2.0.0"
+    "dom-loaded": "2.0.0",
+    "select-dom": "6.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
