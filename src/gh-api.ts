@@ -30,6 +30,27 @@ export async function approvePR({
   return resp.json();
 }
 
+export async function mergePR({
+  org,
+  repo,
+  prNumber,
+}: {
+  org: string;
+  repo: string;
+  prNumber: string;
+}): Promise<any> {
+  const authHeader = await getAuthHeader();
+
+  const resp = await fetch(`https://api.github.com/repos/${org}/${repo}/pulls/${prNumber}/merge`, {
+    method: 'PUT',
+    headers: {
+      Authorization: authHeader,
+    },
+  });
+
+  return resp.json();
+}
+
 async function getAuthHeader(): Promise<string> {
   const optionsStorage = new OptionsSync<Options>();
   const {ghToken} = await optionsStorage.getAll();
