@@ -5,6 +5,7 @@ module.exports = {
   mode: 'production',
   entry: {
     'content-script': './src/index.tsx',
+    options: './src/options.ts',
     'hot-reload': './src/hot-reload.ts',
   },
   output: {
@@ -27,7 +28,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [new CopyWebpackPlugin([{from: 'src/manifest.json'}])],
+  plugins: [
+    new CopyWebpackPlugin([{from: 'src/manifest.json'}]),
+    new CopyWebpackPlugin([{from: 'src/options.html'}]),
+  ],
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
     extensions: ['.ts', '.tsx', '.json', '.js'],
