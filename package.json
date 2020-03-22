@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "build": "NODE_ENV=production webpack",
+    "build:artifact": "(cd lib && zip -r ../artifact.zip .)",
     "coverage": "jest --coverage",
     "lint": "eslint . --ext .js,.ts,.json --fix",
     "lint:ci": "eslint . --ext .js,.ts,.json",
