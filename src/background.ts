@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener(async (message: AnyAction, {tab}, sendRespo
       chrome.tabs.create({
         url,
         index: tab!.index + i + 1,
-        active: true,
+        active: true
       });
     }
 

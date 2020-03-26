@@ -5,7 +5,7 @@ export async function approvePR({
   org,
   repo,
   prNumber,
-  username,
+  username
 }: {
   org: string;
   repo: string;
@@ -19,11 +19,11 @@ export async function approvePR({
     {
       method: 'POST',
       headers: {
-        Authorization: authHeader,
+        Authorization: authHeader
       },
       body: JSON.stringify({
-        event: 'APPROVE',
-      }),
+        event: 'APPROVE'
+      })
     }
   );
 
@@ -39,7 +39,7 @@ export async function mergePR({
   org,
   repo,
   prNumber,
-  username,
+  username
 }: {
   org: string;
   repo: string;
@@ -51,8 +51,8 @@ export async function mergePR({
   const resp = await fetch(`https://api.github.com/repos/${org}/${repo}/pulls/${prNumber}/merge`, {
     method: 'PUT',
     headers: {
-      Authorization: authHeader,
-    },
+      Authorization: authHeader
+    }
   });
 
   if (!resp.ok) {
@@ -73,8 +73,8 @@ async function getAuthHeader(username: string): Promise<string> {
     chrome.runtime.sendMessage({
       action: 'open-urls',
       params: {
-        urls: [`chrome://extensions/?options=${chrome.runtime.id}`],
-      },
+        urls: [`chrome://extensions/?options=${chrome.runtime.id}`]
+      }
     } as OpenURLsAction);
   }
 

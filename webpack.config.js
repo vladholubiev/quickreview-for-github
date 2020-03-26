@@ -7,14 +7,14 @@ module.exports = {
   entry: {
     'content-script': './src/index.tsx',
     options: './src/options.ts',
-    background: './src/background.ts',
+    background: './src/background.ts'
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'lib'),
+    path: path.resolve(__dirname, 'lib')
   },
   optimization: {
-    minimize: false,
+    minimize: false
   },
   devtool: 'cheap-module-source-map',
   module: {
@@ -24,20 +24,20 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            cacheDirectory: true,
-          },
-        },
-      },
-    ],
+            cacheDirectory: true
+          }
+        }
+      }
+    ]
   },
   plugins: [
     new ExtensionReloader({manifest: path.resolve(__dirname, 'src/manifest.json')}),
     new CopyWebpackPlugin([{from: 'src/manifest.json'}]),
     new CopyWebpackPlugin([{from: 'src/options.html'}]),
-    new CopyWebpackPlugin([{from: 'src/icons', patterns: ['*.png'], to: 'icons'}]),
+    new CopyWebpackPlugin([{from: 'src/icons', patterns: ['*.png'], to: 'icons'}])
   ],
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
-    extensions: ['.ts', '.tsx', '.json', '.js'],
-  },
+    extensions: ['.ts', '.tsx', '.json', '.js']
+  }
 };

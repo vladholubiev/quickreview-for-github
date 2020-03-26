@@ -40,6 +40,7 @@
       "git add"
     ]
   },
+  "prettier": "@shelf/prettier-config",
   "jest": {
     "testEnvironment": "node"
   },
@@ -52,25 +53,26 @@
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
-    "@babel/plugin-transform-react-jsx": "7.9.1",
+    "@babel/plugin-transform-react-jsx": "7.9.4",
     "@babel/preset-env": "7.9.0",
     "@babel/preset-typescript": "7.9.0",
     "@shelf/eslint-config": "0.14.2",
-    "@types/chrome": "0.0.101",
+    "@shelf/prettier-config": "0.0.7",
+    "@types/chrome": "0.0.102",
     "@types/copy-webpack-plugin": "5.0.0",
     "@types/jest": "25.1.4",
     "@types/node": "12",
     "@types/webpack": "4.41.8",
-    "babel-jest": "25.1.0",
+    "babel-jest": "25.2.1",
     "babel-loader": "8.1.0",
     "copy-webpack-plugin": "5.1.1",
     "eslint": "6.8.0",
     "husky": "4.2.3",
-    "jest": "25.1.0",
-    "lint-staged": "10.0.8",
-    "prettier": "2.0.1",
+    "jest": "25.2.2",
+    "lint-staged": "10.0.9",
+    "prettier": "2.0.2",
     "typescript": "3.8.3",
-    "webpack": "4.42.0",
+    "webpack": "4.42.1",
     "webpack-bundle-analyzer": "3.6.1",
     "webpack-cli": "3.3.11",
     "webpack-extension-reloader": "1.1.4"
