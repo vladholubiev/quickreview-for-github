@@ -1,18 +1,18 @@
 import OptionsSync from 'webext-options-sync';
-import domLoaded from 'dom-loaded';
-import select from 'select-dom';
-import {Options} from './types';
+import {OpenURLsAction, Options} from './types';
 
 export async function approvePR({
   org,
   repo,
   prNumber,
+  username,
 }: {
   org: string;
   repo: string;
   prNumber: string;
+  username: string;
 }): Promise<any> {
-  const authHeader = await getAuthHeader();
+  const authHeader = await getAuthHeader(username);
 
   const resp = await fetch(
     `https://api.github.com/repos/${org}/${repo}/pulls/${prNumber}/reviews`,
@@ -27,6 +27,11 @@ export async function approvePR({
     }
   );
 
+  if (!resp.ok) {
+    const {message} = await resp.json();
+    throw new Error(message);
+  }
+
   return resp.json();
 }
 
@@ -34,12 +39,14 @@ export async function mergePR({
   org,
   repo,
   prNumber,
+  username,
 }: {
   org: string;
   repo: string;
   prNumber: string;
+  username: string;
 }): Promise<any> {
-  const authHeader = await getAuthHeader();
+  const authHeader = await getAuthHeader(username);
 
   const resp = await fetch(`https://api.github.com/repos/${org}/${repo}/pulls/${prNumber}/merge`, {
     method: 'PUT',
@@ -48,10 +55,15 @@ export async function mergePR({
     },
   });
 
+  if (!resp.ok) {
+    const {message} = await resp.json();
+    throw new Error(message);
+  }
+
   return resp.json();
 }
 
-async function getAuthHeader(): Promise<string> {
+async function getAuthHeader(username: string): Promise<string> {
   const optionsStorage = new OptionsSync<Options>();
   const {ghToken} = await optionsStorage.getAll();
 
@@ -59,12 +71,12 @@ async function getAuthHeader(): Promise<string> {
     alert('Please set Personal token first!');
 
     chrome.runtime.sendMessage({
-      openURLs: [`chrome://extensions/?options=${chrome.runtime.id}`],
-    });
+      action: 'open-urls',
+      params: {
+        urls: [`chrome://extensions/?options=${chrome.runtime.id}`],
+      },
+    } as OpenURLsAction);
   }
-
-  await domLoaded;
-  const username = select<HTMLMetaElement>('meta[name="user-login"]').getAttribute('content');
 
   return `Basic ${btoa(`${username}:${ghToken}`)}`;
 }

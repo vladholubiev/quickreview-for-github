@@ -1,18 +1,37 @@
 import delegate from 'delegate-it';
 import select from 'select-dom';
 import React from 'dom-chef';
-import {approvePR, mergePR} from '../../gh-api';
+import domLoaded from 'dom-loaded';
+import {ApprovePRAction, MergePRAction} from '../../types';
 
 export async function enableApproveMergeShortcuts(): Promise<void> {
   const [org, repo, _, prNumber] = window.location.href.split('/').slice(3);
+  await domLoaded;
+  const username = select<HTMLMetaElement>('meta[name="user-login"]').getAttribute('content');
 
   delegate<HTMLElement, KeyboardEvent>('html', 'keypress', async (event) => {
     if (isAKeyPressedInBody(event)) {
       const wantApprove = confirm('Approve this PR?');
 
       if (wantApprove) {
-        await approvePR({org, repo, prNumber});
-        insertNotificationBanner('Your review was submitted successfully.');
+        chrome.runtime.sendMessage(
+          {
+            action: 'approve-pr',
+            params: {
+              org,
+              repo,
+              prNumber,
+              username,
+            },
+          } as ApprovePRAction,
+          function (response) {
+            if (response.error) {
+              return insertNotificationBanner(response.error);
+            }
+
+            insertNotificationBanner('Your review was submitted successfully.');
+          }
+        );
       }
     }
 
@@ -20,8 +39,24 @@ export async function enableApproveMergeShortcuts(): Promise<void> {
       const wantMerge = confirm('Merge this PR?');
 
       if (wantMerge) {
-        await mergePR({org, repo, prNumber});
-        insertNotificationBanner('Successfully merged PR');
+        chrome.runtime.sendMessage(
+          {
+            action: 'merge-pr',
+            params: {
+              org,
+              repo,
+              prNumber,
+              username,
+            },
+          } as MergePRAction,
+          function (response) {
+            if (response.error) {
+              return insertNotificationBanner(response.error);
+            }
+
+            insertNotificationBanner('Successfully merged PR');
+          }
+        );
       }
     }
   });
