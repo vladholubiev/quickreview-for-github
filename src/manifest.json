@@ -1,6 +1,7 @@
 {
-  "name": "GitHub Productivity",
-  "version": "0.0.3",
+  "name": "Quick Review for GitHub™",
+  "description": "Hotkeys for faster code review of Pull Requests on GitHub™",
+  "version": "0.1.0",
   "manifest_version": 2,
   "permissions": [
     "tabs",
