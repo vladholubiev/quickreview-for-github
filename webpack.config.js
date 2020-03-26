@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtensionReloader = require('webpack-extension-reloader');
 
 module.exports = {
   mode: 'production',
@@ -7,7 +8,6 @@ module.exports = {
     'content-script': './src/index.tsx',
     options: './src/options.ts',
     background: './src/background.ts',
-    'hot-reload': './src/hot-reload.ts',
   },
   output: {
     filename: '[name].js',
@@ -30,6 +30,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new ExtensionReloader({manifest: path.resolve(__dirname, 'src/manifest.json')}),
     new CopyWebpackPlugin([{from: 'src/manifest.json'}]),
     new CopyWebpackPlugin([{from: 'src/options.html'}]),
     new CopyWebpackPlugin([{from: 'src/icons', patterns: ['*.png'], to: 'icons'}]),

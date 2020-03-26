@@ -18,6 +18,7 @@
     "build:artifact": "(cd lib && zip -r ../artifact.zip .)",
     "build:code": "NODE_ENV=production webpack",
     "coverage": "jest --coverage",
+    "dev": "NODE_ENV=development webpack --mode=development --watch",
     "lint": "eslint . --ext .js,.ts,.json --fix",
     "lint:ci": "eslint . --ext .js,.ts,.json",
     "test": "jest src",
@@ -43,7 +44,6 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "crx-hotreload": "1.0.4",
     "delegate-it": "1.1.0",
     "dom-chef": "3.6.3",
     "dom-loaded": "2.0.0",
@@ -57,8 +57,10 @@
     "@babel/preset-typescript": "7.9.0",
     "@shelf/eslint-config": "0.14.2",
     "@types/chrome": "0.0.101",
+    "@types/copy-webpack-plugin": "5.0.0",
     "@types/jest": "25.1.4",
     "@types/node": "12",
+    "@types/webpack": "4.41.8",
     "babel-jest": "25.1.0",
     "babel-loader": "8.1.0",
     "copy-webpack-plugin": "5.1.1",
@@ -71,7 +73,7 @@
     "webpack": "4.42.0",
     "webpack-bundle-analyzer": "3.6.1",
     "webpack-cli": "3.3.11",
-    "webpack-node-externals": "1.7.2"
+    "webpack-extension-reloader": "1.1.4"
   },
   "engines": {
     "node": ">=12"
