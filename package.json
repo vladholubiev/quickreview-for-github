@@ -75,9 +75,6 @@
     "webpack-cli": "3.3.11",
     "webpack-extension-reloader": "1.1.4"
   },
-  "engines": {
-    "node": ">=12"
-  },
   "publishConfig": {
     "access": "public"
   }
