@@ -16,6 +16,7 @@ module.exports = {
   optimization: {
     minimize: false,
   },
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [
       {
