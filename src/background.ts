@@ -1,19 +1,29 @@
 import {AnyAction} from './types';
 import {approvePR, mergePR} from './gh-api';
 
-chrome.runtime.onMessage.addListener(async (message: AnyAction, {tab}, sendResponse) => {
+chrome.runtime.onMessage.addListener((message: AnyAction, sender, sendResponse) => {
+  messageHandler(message, sender, sendResponse);
+
+  return true;
+});
+
+async function messageHandler(
+  message: AnyAction,
+  sender: chrome.runtime.MessageSender,
+  sendResponse: (response?: any) => void
+) {
   console.log('got background message', message);
 
   if (message.action === 'open-urls') {
     for (const [i, url] of message.params.urls.entries()) {
       chrome.tabs.create({
         url,
-        index: tab!.index + i + 1,
+        index: sender.tab!.index + i + 1,
         active: true
       });
     }
 
-    sendResponse({});
+    return sendResponse({});
   }
 
   if (message.action === 'approve-pr') {
@@ -23,12 +33,10 @@ chrome.runtime.onMessage.addListener(async (message: AnyAction, {tab}, sendRespo
     } catch (error) {
       console.log('approve error', error);
 
-      sendResponse({error: `❌ ${error.message}`});
-
-      return true;
+      return sendResponse({error: `❌ ${error.message}`});
     }
 
-    sendResponse({});
+    return sendResponse({});
   }
 
   if (message.action === 'merge-pr') {
@@ -38,13 +46,9 @@ chrome.runtime.onMessage.addListener(async (message: AnyAction, {tab}, sendRespo
     } catch (error) {
       console.error('merge error', error);
 
-      sendResponse({error: `❌ ${error.message}`});
-
-      return true;
+      return sendResponse({error: `❌ ${error.message}`});
     }
 
-    sendResponse({});
+    return sendResponse({});
   }
-
-  return true;
-});
+}

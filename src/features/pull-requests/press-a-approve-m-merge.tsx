@@ -9,7 +9,7 @@ export async function enableApproveMergeShortcuts(): Promise<void> {
   await domLoaded;
   const username = select<HTMLMetaElement>('meta[name="user-login"]').getAttribute('content');
 
-  delegate<HTMLElement, KeyboardEvent>('html', 'keypress', async (event) => {
+  delegate<HTMLElement, KeyboardEvent>('html', 'keypress', async event => {
     if (isAKeyPressedInBody(event)) {
       const wantApprove = confirm('Approve this PR?');
 
@@ -21,12 +21,12 @@ export async function enableApproveMergeShortcuts(): Promise<void> {
               org,
               repo,
               prNumber,
-              username,
-            },
+              username
+            }
           } as ApprovePRAction,
           function (response) {
-            if (response.error) {
-              return insertNotificationBanner(response.error);
+            if (response?.error) {
+              return insertNotificationBanner(response?.error);
             }
 
             insertNotificationBanner('Your review was submitted successfully.');
@@ -46,12 +46,12 @@ export async function enableApproveMergeShortcuts(): Promise<void> {
               org,
               repo,
               prNumber,
-              username,
-            },
+              username
+            }
           } as MergePRAction,
           function (response) {
-            if (response.error) {
-              return insertNotificationBanner(response.error);
+            if (response?.error) {
+              return insertNotificationBanner(response?.error);
             }
 
             insertNotificationBanner('Successfully merged PR');
