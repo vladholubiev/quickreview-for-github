@@ -1,7 +1,7 @@
 {
-  "name": "Quick Review for GitHub™",
-  "description": "Hotkeys for faster code review of Pull Requests on GitHub™",
-  "version": "0.2.0",
+  "name": "Quick Review for GitHub",
+  "description": "Hotkeys for faster code review of Pull Requests on GitHub",
+  "version": "0.2.1",
   "manifest_version": 2,
   "permissions": [
     "tabs",
