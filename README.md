@@ -1,21 +1,20 @@
-# xxxxxx [![CircleCI](https://circleci.com/gh/shelfio/xxxxxx/tree/master.svg?style=svg)](https://circleci.com/gh/shelfio/xxxxxx/tree/master)![](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
+# QuickReview for GitHub
 
-> xxxxxx description
+> Reviewing 50+ Pull Requests a day is no fun. Automate it with keyboard shortcuts
 
-## Install
+![](media/promo/large%20promo%20tile.png)
 
-```
-$ yarn add @shelf/xxxxxx
-```
+# Features
 
-## Usage
+## Press `V` to mark files as viewed
 
-```js
-const {getFoo} = require('@shelf/xxxxxx');
+![](media/feature%20screens/screen%2001%20view.png)
 
-getFoo();
-```
+## Press `A` to approve PRs
 
-## License
+![](media/feature%20screens/screen%2002%20approve.png)
 
-MIT © [Shelf](https://shelf.io)
+
+## Press `M` to merge PRs
+
+![](media/feature%20screens/screen%2003%20merge.png)
