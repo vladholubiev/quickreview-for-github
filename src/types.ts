@@ -3,7 +3,7 @@ export interface Options {
   [key: string]: string | number | boolean;
 }
 
-export type AnyAction = ApprovePRAction | MergePRAction | OpenURLsAction;
+export type AnyAction = ApprovePRAction | MergePRAction;
 
 export interface ApprovePRAction {
   action: 'approve-pr';
@@ -22,12 +22,5 @@ export interface MergePRAction {
     repo: string;
     prNumber: string;
     username: string;
-  };
-}
-
-export interface OpenURLsAction {
-  action: 'open-urls';
-  params: {
-    urls: string[];
   };
 }

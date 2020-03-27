@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     'content-script': './src/index.tsx',
     options: './src/options.ts',
-    background: './src/background.ts'
+    background: './src/background/background.ts'
   },
   output: {
     filename: '[name].js',
@@ -31,7 +31,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtensionReloader({manifest: path.resolve(__dirname, 'src/manifest.json')}),
+    new ExtensionReloader({
+      manifest: path.resolve(__dirname, 'src/manifest.json')
+    }),
     new CopyWebpackPlugin([{from: 'src/manifest.json'}]),
     new CopyWebpackPlugin([{from: 'src/options.html'}]),
     new CopyWebpackPlugin([{from: 'src/icons', patterns: ['*.png'], to: 'icons'}])

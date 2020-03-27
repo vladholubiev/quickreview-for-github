@@ -1,4 +1,4 @@
-import {AnyAction} from './types';
+import {AnyAction} from '../types';
 import {approvePR, mergePR} from './gh-api';
 
 chrome.runtime.onMessage.addListener((message: AnyAction, sender, sendResponse) => {
@@ -13,18 +13,6 @@ async function messageHandler(
   sendResponse: (response?: any) => void
 ) {
   console.log('got background message', message);
-
-  if (message.action === 'open-urls') {
-    for (const [i, url] of message.params.urls.entries()) {
-      chrome.tabs.create({
-        url,
-        index: sender.tab!.index + i + 1,
-        active: true
-      });
-    }
-
-    return sendResponse({});
-  }
 
   if (message.action === 'approve-pr') {
     try {

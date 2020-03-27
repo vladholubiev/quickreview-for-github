@@ -1,5 +1,6 @@
 import OptionsSync from 'webext-options-sync';
-import {OpenURLsAction, Options} from './types';
+import {Options} from '../types';
+import {openNewTab} from './helpers/open-tab';
 
 export async function approvePR({
   org,
@@ -70,12 +71,7 @@ async function getAuthHeader(username: string): Promise<string> {
   if (!ghToken) {
     alert('Please set Personal token first!');
 
-    chrome.runtime.sendMessage({
-      action: 'open-urls',
-      params: {
-        urls: [`chrome://extensions/?options=${chrome.runtime.id}`]
-      }
-    } as OpenURLsAction);
+    openNewTab(`chrome://extensions/?options=${chrome.runtime.id}`);
   }
 
   return `Basic ${btoa(`${username}:${ghToken}`)}`;
