@@ -5,7 +5,10 @@ import domLoaded from 'dom-loaded';
 import {ApprovePRAction, MergePRAction} from '../../types';
 
 export async function enableApproveMergeShortcuts(): Promise<void> {
-  const [org, repo, _, prNumber] = window.location.href.split('/').slice(3);
+  const [org, repo, _, prNumber] = window.location.href
+    .replace(window.location.search, '')
+    .split('/')
+    .slice(3);
   await domLoaded;
   const username = select<HTMLMetaElement>('meta[name="user-login"]').getAttribute('content');
 
