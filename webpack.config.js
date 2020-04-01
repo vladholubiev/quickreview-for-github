@@ -37,7 +37,7 @@ module.exports = {
       }),
     new CopyWebpackPlugin([{from: 'src/manifest.json'}]),
     new CopyWebpackPlugin([{from: 'src/options.html'}]),
-    new CopyWebpackPlugin([{from: 'src/icons', patterns: ['*.png'], to: 'icons'}])
+    new CopyWebpackPlugin([{from: 'src/icons/*.png', to: 'icons/[name].[ext]'}])
   ].filter(e => e),
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
