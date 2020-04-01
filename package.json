@@ -14,8 +14,8 @@
     "lib"
   ],
   "scripts": {
-    "build": "yarn build:code && yarn build:artifact",
-    "build:artifact": "(cd lib && zip -r ../artifact.zip .)",
+    "build": "rm -rf lib/ && yarn build:code && yarn build:artifact",
+    "build:artifact": "rm artifact.zip && (cd lib && zip -r --exclude=*.DS_Store* --exclude=*.js.map ../artifact.zip .)",
     "build:code": "NODE_ENV=production webpack",
     "coverage": "jest --coverage",
     "dev": "NODE_ENV=development webpack --mode=development --watch",
