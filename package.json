@@ -49,7 +49,7 @@
     "dom-chef": "3.6.3",
     "dom-loaded": "2.0.0",
     "select-dom": "6.0.0",
-    "webext-options-sync": "1.2.2"
+    "webext-options-sync": "1.2.3"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",

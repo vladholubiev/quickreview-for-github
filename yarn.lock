@@ -5205,11 +5205,6 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-lz-string@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.4.4.tgz#c0d8eaf36059f705796e1e344811cf4c498d3a26"
-  integrity sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=
-
 make-dir@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
@@ -7687,20 +7682,19 @@ watchpack@^1.6.0:
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
 
-webext-detect-page@^1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/webext-detect-page/-/webext-detect-page-1.0.3.tgz#a0d6107e5e14c9b10e3707f64ff6504c49fded5d"
-  integrity sha512-3VrEm9D9YAdest/CuxnPrVUng2GJ2VgL23T4w0QTCyN1Khothf7aIN7Ct2yFn4jbY376/MAqJQgtclGBaSU/kg==
+webext-detect-page@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/webext-detect-page/-/webext-detect-page-2.0.4.tgz#ecdb421ffced49de2d86a29f8cea61963e62caea"
+  integrity sha512-g6exdnB37cb6jWQaQddcnibCjIIoe00D6MUqbgTQ5FfOvvnyqhRg3+n28PToEo2GTcYroEQwcfFoUkAmDdUVYA==
 
-webext-options-sync@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/webext-options-sync/-/webext-options-sync-1.2.2.tgz#c5ca4c68230b77edf2132785c68c7b63d9bebb67"
-  integrity sha512-ZhqvGsdsEaqrrTu814oVvUJN9fzu1ImUtuzwuLvetTR0eczk1sL1lLRn3Dm+9aZHsccyHpkRH0hsr6izEnsB9g==
+webext-options-sync@1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/webext-options-sync/-/webext-options-sync-1.2.3.tgz#75f33949bf133dc70a1e1d969d14608b5950bc23"
+  integrity sha512-182rV8Q2vXSxfUsQjoEmdfV7byy2a+kPjI2J0DkQuKjk77IjWRDt9zGOsW9PBYtCCWsz99xIIXHOcV4tR+TUtQ==
   dependencies:
     dom-form-serializer "^1.0.7"
-    lz-string "^1.4.4"
     throttle-debounce "^2.1.0"
-    webext-detect-page "^1.0.2"
+    webext-detect-page "^2.0.4"
 
 webextension-polyfill@^0.5.0:
   version "0.5.0"
