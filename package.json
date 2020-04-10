@@ -61,7 +61,7 @@
     "@types/chrome": "0.0.103",
     "@types/copy-webpack-plugin": "5.0.0",
     "@types/jest": "25.1.4",
-    "@types/node": "12",
+    "@types/node": "12.12.32",
     "@types/webpack": "4.41.9",
     "babel-jest": "25.2.4",
     "babel-loader": "8.1.0",
