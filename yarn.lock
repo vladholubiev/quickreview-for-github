@@ -6637,10 +6637,10 @@ schema-utils@^2.6.5:
     ajv "^6.12.0"
     ajv-keywords "^3.4.1"
 
-select-dom@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/select-dom/-/select-dom-6.0.0.tgz#777730bc684ac9994b5d451668d5a03dc228859f"
-  integrity sha512-RJRXB2B7WR2dY9I4Sak72Rc42OuqtB0mJ0i+WpHdRwDZRN8E53/W1WSAxK7QYy3vFGrwWH67Jaj9u2+VdT45CA==
+select-dom@6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/select-dom/-/select-dom-6.0.2.tgz#3a7e0afbc55876e163e03bcb086368a71bb31ede"
+  integrity sha512-fnRexLCjOE1XtMiV0xGACx4GJFMs/eatOQM0LWL9lxWB8DJ/FeXO39ztqUh6dZCOdoFo/g6jGJIIqNWoMsNLPA==
 
 semver-compare@^1.0.0:
   version "1.0.0"
