@@ -52,10 +52,10 @@
     "webext-options-sync": "1.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.9.0",
-    "@babel/plugin-transform-react-jsx": "7.9.4",
-    "@babel/preset-env": "7.9.0",
-    "@babel/preset-typescript": "7.9.0",
+    "@babel/core": "7.10.2",
+    "@babel/plugin-transform-react-jsx": "7.10.1",
+    "@babel/preset-env": "7.10.2",
+    "@babel/preset-typescript": "7.10.1",
     "@shelf/eslint-config": "0.14.2",
     "@shelf/prettier-config": "0.0.7",
     "@types/chrome": "0.0.103",
