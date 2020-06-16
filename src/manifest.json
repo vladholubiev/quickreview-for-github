@@ -1,7 +1,7 @@
 {
   "name": "Quick Review for GitHub",
   "description": "Hotkeys for faster code review of Pull Requests on GitHub",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "manifest_version": 2,
   "permissions": [
     "tabs",
@@ -26,7 +26,7 @@
     {
       "run_at": "document_start",
       "matches": [
-        "https://github.com/*"
+        "https://github.com/*/*/pull/*/files"
       ],
       "js": [
         "content-script.js"
