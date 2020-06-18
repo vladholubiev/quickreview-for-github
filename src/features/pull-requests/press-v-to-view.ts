@@ -3,7 +3,7 @@ import delegate from 'delegate-it';
 let currentViewFileCheckbox: HTMLDivElement = null;
 
 export function enableViewingFilesOnVPress(): void {
-  document.querySelector('[data-hotkey="v"]').removeAttribute('data-hotkey');
+  document.querySelector('[data-hotkey="v"]')?.removeAttribute('data-hotkey');
 
   delegate<HTMLElement, KeyboardEvent>('html', 'keypress', event => {
     if (!isVKeyPressedInBody(event)) {
