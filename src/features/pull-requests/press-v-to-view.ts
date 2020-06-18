@@ -1,10 +1,9 @@
 import delegate from 'delegate-it';
+import elementReady from 'element-ready';
 
 let currentViewFileCheckbox: HTMLDivElement = null;
 
-export function enableViewingFilesOnVPress(): void {
-  document.querySelector('[data-hotkey="v"]')?.removeAttribute('data-hotkey');
-
+export async function enableViewingFilesOnVPress(): Promise<void> {
   delegate<HTMLElement, KeyboardEvent>('html', 'keypress', event => {
     if (!isVKeyPressedInBody(event)) {
       return;
@@ -14,6 +13,15 @@ export function enableViewingFilesOnVPress(): void {
   });
 
   delegate<HTMLDivElement, MouseEvent>('#files', 'mouseover', setCurrentViewFileCheckbox);
+
+  await elementReady('[data-hotkey="v"]');
+
+  const vHotKeyEl = document.querySelector('[data-hotkey="v"]');
+
+  if (vHotKeyEl) {
+    vHotKeyEl.removeAttribute('data-hotkey');
+    console.debug('Removed V key binding from "Review Changes" box');
+  }
 }
 
 function isVKeyPressedInBody(event: KeyboardEvent): boolean {

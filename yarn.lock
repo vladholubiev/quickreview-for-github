@@ -3215,6 +3215,14 @@ electron-to-chromium@^1.3.413:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.473.tgz#d0cd5fe391046fb70674ec98149f0f97609d29b8"
   integrity sha512-smevlzzMNz3vMz6OLeeCq5HRWEj2AcgccNPYnAx4Usx0IOciq9DU36RJcICcS09hXoY7t7deRfVYKD14IrGb9A==
 
+element-ready@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/element-ready/-/element-ready-4.1.1.tgz#1aceb47c69022df23e42ae3280ac89fd585346d8"
+  integrity sha512-GdMA0nVR8YL9adRU//YCwI0aunw4d8oI+9gSH2kJLwcdsYBoGUWbG79AGfvcmlUyLE+amZXOe1VX2nTlcsxYBQ==
+  dependencies:
+    many-keys-map "^1.0.1"
+    p-defer "^3.0.0"
+
 elliptic@^6.0.0:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.2.tgz#05c5678d7173c049d8ca433552224a495d0e3762"
@@ -5612,6 +5620,11 @@ makeerror@1.0.x:
   dependencies:
     tmpl "1.0.x"
 
+many-keys-map@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/many-keys-map/-/many-keys-map-1.0.2.tgz#ae0a38510529be67738a9d1bb98ddc2f09a9f282"
+  integrity sha512-bOXZsgmnTHkvWQCpq9WBnX5JNfJ1WTq9+QdzXe1UA3eu0+8llCrDSPOTKo1IVUrnzW0N0f9pZd95CDpKUC73uw==
+
 map-age-cleaner@^0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/map-age-cleaner/-/map-age-cleaner-0.1.3.tgz#7d583a7306434c055fe474b0f45078e6e1b4b92a"
@@ -6141,6 +6154,11 @@ p-defer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-defer/-/p-defer-1.0.0.tgz#9f6eb182f6c9aa8cd743004a7d4f96b196b0fb0c"
   integrity sha1-n26xgvbJqozXQwBKfU+WsZaw+ww=
+
+p-defer@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/p-defer/-/p-defer-3.0.0.tgz#d1dceb4ee9b2b604b1d94ffec83760175d4e6f83"
+  integrity sha512-ugZxsxmtTln604yeYd29EGrNhazN2lywetzpKhfmQjW/VJmhpDmWbiX+h0zL8V91R0UXkhb3KtPmyq9PZw3aYw==
 
 p-each-series@^2.1.0:
   version "2.1.0"
