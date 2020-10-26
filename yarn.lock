@@ -1957,7 +1957,7 @@ arr-diff@^4.0.0:
   resolved "https://registry.yarnpkg.com/arr-diff/-/arr-diff-4.0.0.tgz#d6461074febfec71e7e15235761a329a5dc7c520"
   integrity sha1-1kYQdP6/7HHn4VI1dhoyml3HxSA=
 
-arr-flatten@^1.0.3, arr-flatten@^1.1.0:
+arr-flatten@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/arr-flatten/-/arr-flatten-1.1.0.tgz#36048bbff4e7b47e136644316c99669ea5ae91f1"
   integrity sha512-L3hKV5R/p5o81R7O02IGnwpDmkp6E982XhtbuwSe3O4qOtMMMtodicASA1Cny2U+aCXcNpml+m4dPsvsJ3jatg==
@@ -3140,13 +3140,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-dom-chef@3.6.3:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/dom-chef/-/dom-chef-3.6.3.tgz#f4ac4adc639fdcae521e2ec9edd4332190d01684"
-  integrity sha512-VQjKmjoMQEIsDWJLem4dJCiJBwBePM9iRKnKiG/pxMaadbupSRpRNW+wOp4nO0Q+J0EZYGHuL8RasX1llTBTYA==
-  dependencies:
-    arr-flatten "^1.0.3"
-    svg-tag-names "^1.1.1"
+dom-chef@4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/dom-chef/-/dom-chef-4.2.2.tgz#0144f059d95d64d8ee2a6fa20a7bd6297cbde6ad"
+  integrity sha512-EHDTYdlf1z4tL6ywXMBx/2PBz6TIELo3tHh0UQOLVzlNyI10IM/V8G6yb39TXKexqvFH47cHbmbp9dGcOQStUQ==
 
 dom-form-serializer@^1.0.7:
   version "1.0.7"
@@ -7647,11 +7644,6 @@ supports-hyperlinks@^2.0.0:
   dependencies:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
-
-svg-tag-names@^1.1.1:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/svg-tag-names/-/svg-tag-names-1.1.2.tgz#aa785b58ce35e725a65758f7e436924dc79be9ce"
-  integrity sha512-LIDOy8NRLGfJegTEnpizWA/ofg3Gyx58JgPEEjvATFciUJW9dHZ2aPTYY0Mn2rQYCeUGZElpHfu91OcWK0IMIw==
 
 svg-tags@1:
   version "1.0.0"
