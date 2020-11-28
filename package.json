@@ -59,7 +59,7 @@
     "@babel/preset-typescript": "7.10.1",
     "@shelf/eslint-config": "0.16.0",
     "@shelf/prettier-config": "0.0.7",
-    "@types/chrome": "0.0.115",
+    "@types/chrome": "0.0.126",
     "@types/copy-webpack-plugin": "5.0.0",
     "@types/jest": "26.0.0",
     "@types/node": "14.0.13",
