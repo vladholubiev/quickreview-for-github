@@ -45,7 +45,7 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "delegate-it": "1.1.0",
+    "delegate-it": "2.0.2",
     "dom-chef": "3.6.3",
     "dom-loaded": "2.0.0",
     "element-ready": "4.1.1",

@@ -3042,10 +3042,10 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
-delegate-it@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/delegate-it/-/delegate-it-1.1.0.tgz#ad8be2a415c65139345f48a343ccf56aff88c353"
-  integrity sha512-LlTfgGPHPXUQjho5qZ6llimoJCRBnbety1V0spXLoGHqr7lQzyBOI7SAr/a99x5Zkb7G0LN1pWa8kVCU3rJuPw==
+delegate-it@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/delegate-it/-/delegate-it-2.0.2.tgz#ad6f57094331a0f2513c04cca56bdee60782a261"
+  integrity sha512-AkARU+uuFIx29yLB04Bu8axCDwOdIWvjt+COYbRiIf/QHp9Ii03pmLoyj0WeG5+ziq5aQ2ZW9Cj397f/HCk7+w==
 
 depd@~1.1.2:
   version "1.1.2"
