@@ -33,7 +33,8 @@ async function rerunWorkflow(workflowId: string, jobId: string): Promise<string>
   const resp = await fetch(`https://circleci.com/api/v2/workflow/${workflowId}/rerun`, {
     method: 'POST',
     headers: {
-      'circle-token': circleToken
+      'circle-token': circleToken,
+      'content-type': 'application/json'
     },
     body: JSON.stringify({
       jobs: [jobId]
