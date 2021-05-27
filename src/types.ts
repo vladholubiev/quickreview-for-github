@@ -1,5 +1,6 @@
 export interface Options {
   ghToken?: string;
+  circleToken?: string;
   [key: string]: string | number | boolean;
 }
 
