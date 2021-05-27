@@ -65,8 +65,7 @@ export async function mergePR({
 }
 
 async function getAuthHeader(username: string): Promise<string> {
-  const optionsStorage = new OptionsSync<Options>();
-  const {ghToken} = await optionsStorage.getAll();
+  const ghToken = await getGitHubTokenFromOptions();
 
   if (!ghToken) {
     alert('Please set Personal token first!');
@@ -75,4 +74,18 @@ async function getAuthHeader(username: string): Promise<string> {
   }
 
   return `Basic ${btoa(`${username}:${ghToken}`)}`;
+}
+
+async function getGitHubTokenFromOptions(): Promise<string> {
+  const optionsStorage = new OptionsSync<Options>();
+  const {ghToken} = await optionsStorage.getAll();
+
+  return ghToken;
+}
+
+async function getCircleTokenFromOptions(): Promise<string> {
+  const optionsStorage = new OptionsSync<Options>();
+  const {circleToken} = await optionsStorage.getAll();
+
+  return circleToken;
 }
