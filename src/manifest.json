@@ -6,7 +6,8 @@
   "permissions": [
     "tabs",
     "storage",
-    "contextMenus"
+    "contextMenus",
+    "https://circleci.com/api/*"
   ],
   "background": {
     "scripts": [

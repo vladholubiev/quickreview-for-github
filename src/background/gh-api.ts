@@ -82,10 +82,3 @@ async function getGitHubTokenFromOptions(): Promise<string> {
 
   return ghToken;
 }
-
-async function getCircleTokenFromOptions(): Promise<string> {
-  const optionsStorage = new OptionsSync<Options>();
-  const {circleToken} = await optionsStorage.getAll();
-
-  return circleToken;
-}

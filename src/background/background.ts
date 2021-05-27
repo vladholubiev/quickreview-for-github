@@ -1,5 +1,19 @@
 import {AnyAction} from '../types';
 import {approvePR, mergePR} from './gh-api';
+import {rerunJob} from './circle-api';
+
+chrome.contextMenus.removeAll();
+chrome.contextMenus.create({
+  title: 'Rerun Job',
+  contexts: ['all'],
+  onclick: async function (info) {
+    const jobNumber = info.linkUrl.split('/jobs/')[1];
+    const workflowId = info.pageUrl.split('workflows/')[1];
+    console.log({workflowId, jobNumber});
+
+    await rerunJob(workflowId, Number(jobNumber));
+  }
+});
 
 chrome.runtime.onMessage.addListener((message: AnyAction, sender, sendResponse) => {
   messageHandler(message, sender, sendResponse);
