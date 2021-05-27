@@ -29,7 +29,7 @@
       "run_at": "document_start",
       "matches": [
         "https://github.com/*/*/pull/*/files",
-        "https://app.circleci.com/*/workflows/*"
+        "https://app.circleci.com/pipelines/*"
       ],
       "js": [
         "content-script.js"
