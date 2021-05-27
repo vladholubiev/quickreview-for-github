@@ -2,8 +2,12 @@ import {enableViewingFilesOnVPress} from './features/pull-requests/press-v-to-vi
 import {enableApproveMergeShortcuts} from './features/pull-requests/press-a-approve-m-merge';
 
 async function init() {
-  enableViewingFilesOnVPress();
-  enableApproveMergeShortcuts();
+  const {host} = window.location;
+
+  if (host.includes('github.com')) {
+    enableViewingFilesOnVPress();
+    enableApproveMergeShortcuts();
+  }
 }
 
 init();
