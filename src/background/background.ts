@@ -7,8 +7,7 @@ chrome.contextMenus.create({
   title: 'Rerun Job',
   contexts: ['all'],
   onclick: async function (info) {
-    const jobNumber = info.linkUrl.split('/jobs/')[1];
-    const workflowId = info.pageUrl.split('workflows/')[1];
+    const [workflowId, jobNumber] = info.linkUrl.split('/workflows/')[1].split('/jobs/');
     console.log({workflowId, jobNumber});
 
     await rerunJob(workflowId, Number(jobNumber));
